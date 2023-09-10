@@ -30,10 +30,23 @@ cursor = conexao.cursor()
 #resultado = dados.fetchone()[0]  # Obter o valor da contagem
 #print("Número total de alunos:", resultado)
 
-cursor.execute('UPDATE alunos SET idade = 25 WHERE nome = "Luisa"')
-dados = cursor.execute('select * from alunos')
-for aluno in dados:
-    print (aluno)
+#cursor.execute('UPDATE alunos SET idade = 25 WHERE nome = "LUISA"')
+#dados = cursor.execute('select * from alunos')
+#for aluno in dados:
+#    print (aluno)
+
+#cursor.execute('DELETE from alunos WHERE id=2')
+#dados = cursor.execute('select * from alunos')
+#for aluno in dados:
+#    print (aluno)
+
+cursor.execute('CREATE TABLE clientes (id INTEGER PRIMARY KEY, nome VARCHAR(100), idade INT, saldo FLOAT)')
+
+cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("Ana", 32, 1500.50)')
+cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("Carlos", 45, 2200.75)')
+cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("Maria", 28, 1800.60)')
+cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("João", 38, 3500.90)')
+
 
 conexao.commit()
 conexao.close 
