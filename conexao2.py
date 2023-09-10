@@ -17,9 +17,23 @@ cursor = conexao.cursor()
 #for aluno in dados:
 #   print (aluno)
 
-dados = cursor.execute('select * FROM alunos WHERE curso="engenharia" ORDER BY nome')
+#dados = cursor.execute('select * FROM alunos WHERE curso="engenharia" ORDER BY nome')
+#for aluno in dados:
+#   print (aluno)
+
+#dados = cursor.execute('select * FROM alunos WHERE curso="engenharia" ORDER BY nome')
+#for aluno in dados:
+#   print (aluno)
+
+#essa consulta nao sabia fazer,
+#dados = cursor.execute('SELECT COUNT(*) FROM alunos')
+#resultado = dados.fetchone()[0]  # Obter o valor da contagem
+#print("Número total de alunos:", resultado)
+
+cursor.execute('UPDATE alunos SET idade = 25 WHERE nome = "Luisa"')
+dados = cursor.execute('select * from alunos')
 for aluno in dados:
-   print (aluno)
+    print (aluno)
 
 conexao.commit()
 conexao.close 
