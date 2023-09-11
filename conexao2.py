@@ -18,7 +18,7 @@ cursor = conexao.cursor()
 #   print (aluno)
 
 #dados = cursor.execute('select * FROM alunos WHERE curso="engenharia" ORDER BY nome')
-#for aluno in dados:
+#for aluno in dados:  
 #   print (aluno)
 
 #dados = cursor.execute('select * FROM alunos WHERE curso="engenharia" ORDER BY nome')
@@ -40,13 +40,16 @@ cursor = conexao.cursor()
 #for aluno in dados:
 #    print (aluno)
 
-cursor.execute('CREATE TABLE clientes (id INTEGER PRIMARY KEY, nome VARCHAR(100), idade INT, saldo FLOAT)')
+#cursor.execute('CREATE TABLE clientes (id INTEGER PRIMARY KEY, nome VARCHAR(100), idade INT, saldo FLOAT)')
 
-cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("Ana", 32, 1500.50)')
-cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("Carlos", 45, 2200.75)')
-cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("Maria", 28, 1800.60)')
-cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("João", 38, 3500.90)')
+#cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("Ana", 32, 1500.50)')
+#cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("Carlos", 45, 2200.75)')
+#cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("Maria", 28, 1800.60)')
+#cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("João", 38, 3500.90)')
 
+dados = cursor.execute('SELECT nome, idade FROM clientes WHERE idade > 30')
+for cliente in dados:
+    print(cliente)
 
 conexao.commit()
 conexao.close 
