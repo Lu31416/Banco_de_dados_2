@@ -25,7 +25,7 @@ cursor = conexao.cursor()
 #for aluno in dados:
 #   print (aluno)
 
-#essa consulta nao sabia fazer,
+#revisar,
 #dados = cursor.execute('SELECT COUNT(*) FROM alunos')
 #resultado = dados.fetchone()[0]  # Obter o valor da contagem
 #print("Número total de alunos:", resultado)
@@ -47,9 +47,15 @@ cursor = conexao.cursor()
 #cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("Maria", 28, 1800.60)')
 #cursor.execute('INSERT INTO clientes (nome, idade, saldo) VALUES ("João", 38, 3500.90)')
 
+#dados = cursor.execute('SELECT nome, idade FROM clientes WHERE idade > 30')
+#for cliente in dados:
+#    print(cliente)
+
 dados = cursor.execute('SELECT nome, idade FROM clientes WHERE idade > 30')
 for cliente in dados:
     print(cliente)
+
+
 
 conexao.commit()
 conexao.close 
